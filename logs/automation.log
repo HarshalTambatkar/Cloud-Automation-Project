@@ -2,3 +2,7 @@ INFO:botocore.credentials:Found credentials in shared credentials file: ~/.aws/c
 INFO:root:Bucket harshal-cloud-automation-bucket created successfully
 INFO:botocore.credentials:Found credentials in shared credentials file: ~/.aws/credentials
 INFO:root:Bucket list fetched successfully
+2026-05-24 13:21:15,927 - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2026-05-24 13:21:17,148 - INFO - Bucket list fetched successfully
+2026-05-24 13:24:43,785 - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2026-05-24 13:24:45,132 - INFO - Bucket list fetched successfully
