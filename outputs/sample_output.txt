@@ -1,0 +1,6 @@
+Bucket created successfully
+
+Available Buckets:
+
+config-bucket-359289023183
+harshal-cloud-automation-bucket
