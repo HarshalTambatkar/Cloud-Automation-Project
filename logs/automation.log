@@ -1,0 +1,4 @@
+INFO:botocore.credentials:Found credentials in shared credentials file: ~/.aws/credentials
+INFO:root:Bucket harshal-cloud-automation-bucket created successfully
+INFO:botocore.credentials:Found credentials in shared credentials file: ~/.aws/credentials
+INFO:root:Bucket list fetched successfully
