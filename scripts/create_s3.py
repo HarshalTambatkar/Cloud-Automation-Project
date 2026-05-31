@@ -1,10 +1,18 @@
 import boto3
 import logging
+import os
 
-# Logging setup
+# Project root path
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Log file path
+LOG_FILE = os.path.join(BASE_DIR, "logs", "automation.log")
+
+# Configure logging
 logging.basicConfig(
-    filename='../logs/automation.log',
-    level=logging.INFO
+    filename=LOG_FILE,
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
 try:
@@ -12,16 +20,21 @@ try:
 
     bucket_name = "harshal-cloud-automation-bucket"
 
-    s3.create_bucket(
-        Bucket=bucket_name,
-        CreateBucketConfiguration={
-            'LocationConstraint': 'eu-north-1'
-        }
-    )
+    try:
+        s3.create_bucket(
+            Bucket=bucket_name,
+            CreateBucketConfiguration={
+                'LocationConstraint': 'eu-north-1'
+            }
+        )
 
-    print("Bucket created successfully")
-    logging.info(f"Bucket {bucket_name} created successfully")
+        print("Bucket created successfully")
+        logging.info(f"Bucket {bucket_name} created successfully")
+
+    except s3.exceptions.BucketAlreadyOwnedByYou:
+        print("Bucket already exists")
+        logging.info(f"Bucket {bucket_name} already exists")
 
 except Exception as e:
     print("Error:", e)
-    logging.error(str(e))
+    logging.error(f"Error occurred: {str(e)}")
